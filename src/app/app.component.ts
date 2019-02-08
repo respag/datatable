@@ -26,35 +26,18 @@ export class AppComponent implements OnInit{
       res => {  
         this.dataSource = new MatTableDataSource();  
         this.dataSource.data = res;  
-        console.log(this.dataSource.data);
+      //  console.log(this.dataSource.data);
         this.dataSource.sort = this.sort; 
-        this.dataSource.paginator = this.paginator;
-          
+        this.dataSource.paginator = this.paginator;          
       },  
       error => {  
-        console.log('There was an error while retrieving Usuarios !!!' + error);  
+        console.log('Se produjo un error mientras intentaba recuperar Usuarios!' + error);  
       });  
-  }  
-
-  /**
-   * Set the paginator and sort after the view init since this component will
-   * be able to query its view for the initialized paginator and sort.
-   */
- /*  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  } */
+  }
 
   applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    filterValue = filterValue.trim(); 
+    filterValue = filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
   }
-}
-
-export interface UserData {
-  id: string;
-  nombre: string;
-  apellido: string;
-  nacionalidad: string;
 }

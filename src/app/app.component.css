@@ -8,6 +8,10 @@
     min-height: 64px;
     padding: 8px 24px 0;
   }
+
+  mat-header-row{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
   
   .mat-form-field {
     font-size: 14px;
@@ -16,7 +20,6 @@
   
   .mat-table {
     overflow: auto;
-    /* max-height: 500px; */
   }
 
   .mat-row:nth-child(even){
